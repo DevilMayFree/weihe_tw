@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>公司宣传册</title>
+    <link rel="stylesheet" type="text/css" href="/gxgj/lib/book/css/basic.css" />
+    <link rel="stylesheet" href="/gxgj/lib/book/iconfont/iconfont.css">
+    <script type="text/javascript" src="/gxgj/lib/book/js/jquery.js"></script>
+    <script type="text/javascript" src="/gxgj/lib/book/js/modernizr.2.5.3.min.js"></script>
+  
+    <title>公司宣传册 -国新国际投资有限公司</title>
+    </head>
+<!--水印-->   
+<style>
+  .page:before{
+   display:block;
+   content:'';
+   width: 100%;
+   height: 100%;
+   position:absolute;
+   z-index: 11;
+   top:0;
+   background:url(/gxgj/lib/book/image/sy-shu.png) no-repeat;
+   background-size: cover;
+}
+ </style>
+<body>
+    <div class="background">
+        <audio src='/gxgj/lib/book/js/fy.mp3'></audio>
+        <!-- 加载框 -->
+        <div class="shade">
+            <div class="sk-fading-circle">
+                <div class="sk-circle1 sk-circle"></div>
+                <div class="sk-circle2 sk-circle"></div>
+                <div class="sk-circle3 sk-circle"></div>
+                <div class="sk-circle4 sk-circle"></div>
+                <div class="sk-circle5 sk-circle"></div>
+                <div class="sk-circle6 sk-circle"></div>
+                <div class="sk-circle7 sk-circle"></div>
+                <div class="sk-circle8 sk-circle"></div>
+                <div class="sk-circle9 sk-circle"></div>
+                <div class="sk-circle10 sk-circle"></div>
+                <div class="sk-circle11 sk-circle"></div>
+                <div class="sk-circle12 sk-circle"></div>
+            </div>
+            <div class="number"></div>
+        </div>
+        <!-- 书的外边框 -->
+        <div class="flipbook-viewport" style="display:none;">
+            <i class="previousPage">
+                <img src="/gxgj/lib/book/image/left.png" alt="">
+            </i>
+            <i class="nextPage">
+                <img src="/gxgj/lib/book/image/right.png" alt="">
+            </i>
+            <div class="operation">
+                <div class="flex">
+                    <i class="play ">
+                        <img src="/gxgj/lib/book/image/play.png" alt="">
+                    </i>
+                    <i class="start">
+                        <img src="/gxgj/lib/book/image/go1.png" alt="">
+                    </i>
+                </div>
+
+                <div class="Progress_bar">
+                    <!-- 页码 -->
+                    <div class="pagenumber"></div>
+                    <div id="progress-container">
+                        <div id="progress-bar" style="width: 0;"></div>
+                    </div>
+                </div>
+                <div class="flex">
+                    <i class="end ">
+                        <img src="/gxgj/lib/book/image/go-1.png" alt="">
+                    </i>
+                    <i class="full-screen">
+                        <img src="/gxgj/lib/book/image/all.png" alt="">
+                    </i>
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="flipbook">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // 加载图片
+        // 背景图片加载方式，注意路径
+        var loading_img_url = [
+            "/gxgj/lib/book/image/0001.png",
+            "/gxgj/lib/book/image/0003.png",
+            "/gxgj/lib/book/image/0002.png",
+            "/gxgj/lib/book/image/0004.png",
+            "/gxgj/lib/book/image/0005.png",
+            "/gxgj/lib/book/image/0006.png",
+            "/gxgj/lib/book/image/0007.png",
+            "/gxgj/lib/book/image/0008.png",
+            "/gxgj/lib/book/image/0009.png",
+            "/gxgj/lib/book/image/0010.png",
+            "/gxgj/lib/book/image/0011.png",
+            "/gxgj/lib/book/image/0012.png",
+            "/gxgj/lib/book/image/0013.png",
+            "/gxgj/lib/book/image/0014.png",
+            "/gxgj/lib/book/image/0015.png",
+            "/gxgj/lib/book/image/0018.png",
+            "/gxgj/lib/book/image/0019.png",
+            "/gxgj/lib/book/image/0020.png",
+            "/gxgj/lib/book/image/0021.png",
+            "/gxgj/lib/book/image/0022.png",
+            "/gxgj/lib/book/image/0023.png",
+            "/gxgj/lib/book/image/0024.png",
+            "/gxgj/lib/book/image/0025.png",
+    
+            "/gxgj/lib/book/image/0028.png",
+            "/gxgj/lib/book/image/0029.png",
+            
+            
+            "/gxgj/lib/book/image/0032.png",
+            "/gxgj/lib/book/image/0033.png",
+            "/gxgj/lib/book/image/0034.png",
+
+        ];
+    </script>
+    <script type="text/javascript" src="/gxgj/lib/book/js/main.js"></script>
+    <script>
+        if ($(window).width() > 1024 && $(window).height() > 700) {
+            //上一页
+            $(".previousPage").bind("click", function () {
+                var pageCount = $(".flipbook").turn("pages");//总页数
+                var currentPage = $(".flipbook").turn("page");//当前页
+                if (currentPage > 2) {
+                    $(".flipbook").turn('page', currentPage - 2);
+                } else if (currentPage == 2) {
+                    $(".flipbook").turn('page', currentPage - 1);
+                }
+            });
+            // 下一页
+            $(".nextPage").bind("click", function () {
+                var pageCount = $(".flipbook").turn("pages");//总页数
+                var currentPage = $(".flipbook").turn("page");//当前页
+                if (currentPage < pageCount - 1) {
+                    $(".flipbook").turn('page', currentPage + 2);
+                } else if (currentPage == pageCount - 1) {
+                    $(".flipbook").turn('page', currentPage + 1);
+                }
+            });
+        } else {
+            //上一页
+            $(".previousPage").bind("click", function () {
+                var pageCount = $(".flipbook").turn("pages");//总页数
+                var currentPage = $(".flipbook").turn("page");//当前页
+                if (currentPage >= 2) {
+                    $(".flipbook").turn('page', currentPage - 1);
+                } else {
+                }
+            });
+            // 下一页
+            $(".nextPage").bind("click", function () {
+                var pageCount = $(".flipbook").turn("pages");//总页数
+                var currentPage = $(".flipbook").turn("page");//当前页
+                if (currentPage <= pageCount) {
+                    $(".flipbook").turn('page', currentPage + 1);
+                } else {
+                }
+            });
+        }
+
+        $('.full-screen').on('click', function () {
+            if (toggleFullScreen()) {
+                $('.full-screen img').attr("src", '/gxgj/lib/book/image/noAll.png')
+                $('.operation').css('bottom', '50px')
+                $('.container').css('padding-left', '40px')
+                $('.previousPage').css('left', '7%')
+            } else {
+                $('.full-screen img').attr("src", '/gxgj/lib/book/image/all.png')
+                $('.previousPage').css('left', '10%')
+                $('.container').css('padding-left', '0')
+                $('.operation').css('bottom', '34px')
+            }
+
+        })
+        // 全屏
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {  // 如果当前没有元素处于全屏模式
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen(); // 请求全屏
+                } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+                    document.documentElement.mozRequestFullScreen();
+                } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                    document.documentElement.webkitRequestFullscreen();
+                } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+                    document.documentElement.msRequestFullscreen();
+                }
+                return true
+            } else { // 如果已经有元素处于全屏模式
+                if (document.exitFullscreen) {
+                    document.exitFullscreen(); // 退出全屏
+                } else if (document.mozCancelFullScreen) { /* Firefox */
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE/Edge */
+                    document.msExitFullscreen();
+                }
+                return false
+            }
+        }
+
+        // 禁止页面滚动
+        window.addEventListener('mousewheel', function (event) {
+            if (event.ctrlKey === true || event.metaKey) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+        document.addEventListener('keydown', function (event) {
+            if ((event.ctrlKey === true || event.metaKey === true)
+                && (event.which === 61 || event.which === 107
+                    || event.which === 173 || event.which === 109
+                    || event.which === 187 || event.which === 189)) {
+                event.preventDefault();
+            }
+        }, false);
+
+        //firefox
+        window.addEventListener('DOMMouseScroll', function (event) {
+            if (event.ctrlKey === true || event.metaKey) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+
+
+    </script>
+    <script>
+<!--禁止图片拖拽-->    
+       document.body.addEventListener('dragstart',function(e){
+        if(e.target.nodeName.toLowerCase() === 'img' && e.target.parentNode.classList.contains('page')){
+            e.preventDefault();
+        }
+    })
+ $(document).ready(function(){
+  $('img').attr('draggable', 'false');
+});
+ <!--禁止右键-->
+$(document).on("contextmenu", function(e) {
+    e.preventDefault();
+});
+ <!--禁止f12-->
+    $(document).keydown(function(event) {
+    //监听按键事件，如果按下的是F12
+    if (event.keyCode === 123) {
+        //阻止默认行为，即禁用F12
+        event.preventDefault();
+    }
+});
+
+</script>
+    
+    
+    <script>
+    $(window).resize(function() {
+  location.reload();
+});
+    </script>
+</body>
+
+</html><script type="text/javascript" id="hingecloudstat" src="/collect.js" data='A014002003' dataType='2' webAppCode='A014'></script><div style='display:none'>Produced By CMS 网站群内容管理系统 publishdate:2024-05-29 09:59:43</div></body></html>
