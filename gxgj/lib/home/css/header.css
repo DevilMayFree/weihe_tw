@@ -758,6 +758,7 @@
 }
 
 .ham-pop-follow {
+	display: none;!important;
 	margin-top: 3vw;
 }
 .ham-pop-title h1 {

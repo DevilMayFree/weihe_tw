@@ -1,13 +1,13 @@
 $(window).ready(function() {
-var langType = localStorage.getItem("langType")? localStorage.getItem("langType"):"langjian"
+var langType = localStorage.getItem("langType")? localStorage.getItem("langType"):"langfan"
 if(langType == 'langjian'){
 document.body.innerHTML=t2s(document.body.innerHTML);
  $("#header .logo,#header_nei .logo,#header_nei.on .logo").css({"background":"url(/gxgj/lib/home/images/logo-jt.png) no-repeat center","background-size":"100%"})
  $(".flogo img,#mobileHeader .logo img").attr("src","/gxgj/lib/home/images/logo-jt.png")
 }else {
 document.body.innerHTML=s2t(document.body.innerHTML);
- $("#header .logo,#header_nei .logo,#header_nei.on .logo").css({"background":"url(/gxgj/lib/home/images/logo-ft.png) no-repeat center","background-size":"100%"})
-$(".flogo img,#mobileHeader .logo img").attr("src","/gxgj/lib/home/images/logo-ft.png");
+ $("#header .logo,#header_nei .logo,#header_nei.on .logo").css({"background":"url(/gxgj/lib/home/images/logo-jt.png) no-repeat center","background-size":"100%"})
+$(".flogo img,#mobileHeader .logo img").attr("src","/gxgj/lib/home/images/logo-jt.png");
 
 }
 $(document).off("click",".languageBtn").on("click",".languageBtn",function(){
