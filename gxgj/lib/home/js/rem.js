@@ -10,8 +10,12 @@ if(window.screen.availWidth>1024){
 	
 			// 设置html fontSize
 			function setSize() {
+
 					var winWidth = win.innerWidth || html.clientWidth;
 					html.style.fontSize = 78 * winWidth / width + 'px';
+
+					// document.getElementById('exampleModal').style.fontSize = '1px';
+
 			};
 	
 			// 设置 initial-scale

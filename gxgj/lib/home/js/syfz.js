@@ -234,7 +234,9 @@ $(function() {
                 var videoSrc = '/gxgj/lib/home/images/banner-video3.mp4'
                 if (docW >= 1200) {
                     if (this.realIndex != 1) {
-                        svideo.pause();
+						if(svideo){
+                            svideo.pause();
+						}
                         $('.banner-video').attr('src', '')
                     } else {
                         $('.banner-video').attr('src', videoSrc)
@@ -249,7 +251,9 @@ $(function() {
                 var videoSrc = '/gxgj/lib/home/images/banner-video3.mp4'
                 if (docW >= 1200) {
                     if (this.realIndex != 1) {
-                        svideo.pause();
+						if(svideo){
+							svideo.pause();
+						}
                         $('.banner-video').attr('src', '')
                     } else {
                         $('.banner-video').attr('src', videoSrc)
