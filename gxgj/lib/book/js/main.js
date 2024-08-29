@@ -309,7 +309,7 @@ function getNowFormatDate() {
 }
 
 
-// 到尾页/首页
+// 到尾页/首頁
 $('.start').on('click', function () {
     $('.flipbook').turn("page", 1)
 

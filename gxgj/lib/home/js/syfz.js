@@ -1,6 +1,6 @@
 $(function() {
 	var inW = $(window).innerWidth()
-	// 首页pc 滚动逻辑
+	// 首頁pc 滚动逻辑
 	function pcIndexFun() {
 		var poxTime = 1000;
 		var poxOut = false;
@@ -148,7 +148,7 @@ $(function() {
 		// })
 
 	}
-	// 首页移动端 滚动逻辑
+	// 首頁移动端 滚动逻辑
 	function mobileIndexFun() {
 
 		$(".swiper-no-swiping").removeClass("swiper-no-swiping")
